@@ -1,17 +1,16 @@
 <script lang="ts">
-	import { FORM_STEP, type FormStep } from '$lib/custom';
-	import { Button, Dropdown, DropdownItem, Label, Input, Radio } from 'flowbite-svelte';
+	import { calculatePenlightColor } from '$lib/color';
+	import { FORM_STEP, type FormStep, type SectionNumber } from '$lib/custom';
+	import { Button, Dropdown, DropdownItem, Label } from 'flowbite-svelte';
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 
-	const sections = Array.from({ length: 15 }, (_, i) => i + 1);
-	const rows = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+	const sections = Array.from({ length: 16 }, (_, i) => i + 1);
+	const rows = ['v', 'w', 'x', 'y', 'z', 'other'];
 
 	let activeStep: FormStep = FORM_STEP.SELECT_SEAT;
 
 	let selectedRow: string;
-	let selectedSection: number;
-
-	let penlightColor = 'red';
+	let selectedSection: SectionNumber;
 
 	let rowDropdownOpen = false;
 	let sectionDropdownOpen = false;
@@ -31,10 +30,11 @@
 	const handleSectionDropdownClick = (e: Event) => {
 		e.preventDefault();
 		sectionDropdownOpen = false;
-		selectedSection = parseInt((e.target as HTMLElement)?.innerText);
+		selectedSection = parseInt((e.target as HTMLElement)?.innerText) as SectionNumber;
 	};
 
-	$: console.log({ selectedRow, selectedSection });
+	$: penlightColor =
+		selectedSection ? calculatePenlightColor(selectedSection, selectedRow) : 'none';
 </script>
 
 {#if activeStep == FORM_STEP.SELECT_SEAT}
