@@ -112,7 +112,7 @@
 		in:fade
 	>
 		<!-- Step 2 -->
-		<p class="text-xl font-semibold">Your penlight color</p>
+		<p class="text-xl font-semibold text-secondary-500">Your penlight color</p>
 
 		<div class="rounded-2xl p-32" style={`background-color: ${penlightColorHex}`}></div>
 		<p class="text-6xl font-bold tracking-tight text-primary-800">{penlightColor}</p>
