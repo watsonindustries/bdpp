@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { calculatePenlightColor } from '$lib/color';
-	import { FORM_STEP, type FormStep, type SectionNumber } from '$lib/custom';
+	import { colorToBladeColorsMapping } from '$lib/const';
+	import { FORM_STEP, type FormStep, type PenlightColor, type SectionNumber } from '$lib/custom';
 	import { Button, Dropdown, DropdownItem, Label } from 'flowbite-svelte';
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 	import { fade } from 'svelte/transition';
@@ -17,6 +18,16 @@
 	let rowDropdownOpen = false;
 	let sectionDropdownOpen = false;
 
+	$: penlightColor = selectedSection
+		? calculatePenlightColor(selectedSection, selectedRow)
+		: 'none';
+
+	$: penlightColorHex =
+		penlightColor !== 'none'
+			? colorToBladeColorsMapping[penlightColor as PenlightColor]['hex']
+			: 'none';
+
+	// Handlers
 	const handleNextBtnClick = () => {
 		if (activeStep === FORM_STEP.SELECT_SEAT) {
 			activeStep = FORM_STEP.CONFIRMATION;
@@ -35,9 +46,10 @@
 		selectedSection = parseInt((e.target as HTMLElement)?.innerText) as SectionNumber;
 	};
 
-	$: penlightColor = selectedSection
-		? calculatePenlightColor(selectedSection, selectedRow)
-		: 'none';
+	const handleHexColorClick = () => {
+		navigator.clipboard.writeText(penlightColorHex);
+		alert('Copied HEX code to clipboard');
+	};
 </script>
 
 {#if activeStep == FORM_STEP.SELECT_SEAT}
@@ -102,9 +114,9 @@
 		<!-- Step 2 -->
 		<p class="text-xl font-semibold">Your penlight color</p>
 
-		<!-- FIXME: correct penlight color mapping -->
-		<div class="bg-{penlightColor}-700 rounded-2xl p-32"></div>
+		<div class="rounded-2xl p-32" style={`background-color: ${penlightColorHex}`}></div>
 		<p class="text-6xl font-bold tracking-tight text-primary-800">{penlightColor}</p>
+		<p class="text-2xl text-primary-700" on:click={handleHexColorClick}>{penlightColorHex}</p>
 
 		<Button color="alternative" size="xl" on:click={() => (activeStep = FORM_STEP.SELECT_SEAT)}
 			>Change seat</Button

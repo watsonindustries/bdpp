@@ -33,3 +33,42 @@ export const sectionPenlightColorMapping = {
 	15: 'lightgreen',
 	16: 'lightgreen'
 };
+
+export const colorToBladeColorsMapping = {
+	violet: {
+		hex: '#8e58a5'
+	},
+	blue: {
+		hex: '#1650c3'
+	},
+	lightblue: {
+		hex: '#71cad5'
+	},
+	pink: {
+		hex: '#c55b98'
+	},
+	orange: {
+		hex: '#d79d47'
+	},
+	red: {
+		hex: '#ff0000'
+	},
+	purple: {
+		hex: '#674599'
+	},
+	yellow: {
+		hex: '#efe736'
+	},
+	white: {
+		hex: '#cfd0cb'
+	},
+	green: {
+		hex: '#008f49'
+	},
+	lightpink: {
+		hex: '#d999c1'
+	},
+	lightgreen: {
+		hex: '#3fa688'
+	}
+} as const;
