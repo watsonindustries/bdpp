@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { calculatePenlightColor } from '$lib/color';
+	import { calculatePenlightColor, hexToRGB } from '$lib/color';
 	import { colorToBladeColorsMapping, sectionPenlightColorMapping } from '$lib/const';
 	import { FORM_STEP, type FormStep, type PenlightColor, type SectionNumber } from '$lib/custom';
 	import { Button, Dropdown, DropdownItem, Label } from 'flowbite-svelte';
-	import { ChevronDownOutline } from 'flowbite-svelte-icons';
+	import { ChevronDownOutline, EditSolid } from 'flowbite-svelte-icons';
 	import { fade } from 'svelte/transition';
 
 	const sections = Object.keys(sectionPenlightColorMapping);
@@ -28,6 +28,8 @@
 		penlightColor !== 'none'
 			? colorToBladeColorsMapping[penlightColor as PenlightColor]['hex']
 			: 'none';
+
+	$: penlightColorRGB = hexToRGB(penlightColorHex);
 
 	// Handlers
 	const handleNextBtnClick = () => {
@@ -118,10 +120,15 @@
 
 		<div class="rounded-2xl p-32" style={`background-color: ${penlightColorHex}`}></div>
 		<p class="text-6xl font-bold tracking-tight text-primary-800">{penlightColor}</p>
-		<p class="text-2xl text-primary-700" on:click={handleHexColorClick}>{penlightColorHex}</p>
+		<p class="text-2xl text-primary-700">
+			{penlightColorRGB.r}
+			{penlightColorRGB.g}
+			{penlightColorRGB.b}
+		</p>
+		<p class="text-2xl text-primary-700">{penlightColorHex}</p>
 
 		<Button color="alternative" size="xl" on:click={() => (activeStep = FORM_STEP.SELECT_SEAT)}
-			>Change seat</Button
+			><EditSolid /> Change seat</Button
 		>
 	</section>
 {/if}

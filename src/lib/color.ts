@@ -5,7 +5,7 @@
  * @returns The penlight color.
  */
 import { sectionPenlightColorMapping } from '$lib/const';
-import type { PenlightColor, SectionNumber } from '$lib/custom';
+import type { PenlightColor, RGB, SectionNumber } from '$lib/custom';
 
 export function calculatePenlightColor(
 	section: SectionNumber,
@@ -15,4 +15,12 @@ export function calculatePenlightColor(
 		return (sectionPenlightColorMapping[section] as { [key: string]: PenlightColor })[row];
 	}
 	return sectionPenlightColorMapping[section] as PenlightColor;
+}
+
+export function hexToRGB(hex: string): RGB {
+	const hexNumber = parseInt(hex.slice(1), 16);
+	const r = (hexNumber >> 16) & 255;
+	const g = (hexNumber >> 8) & 255;
+	const b = hexNumber & 255;
+	return { r, g, b };
 }
