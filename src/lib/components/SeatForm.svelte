@@ -1,19 +1,21 @@
 <script lang="ts">
 	import { calculatePenlightColor } from '$lib/color';
-	import { colorToBladeColorsMapping } from '$lib/const';
+	import { colorToBladeColorsMapping, sectionPenlightColorMapping } from '$lib/const';
 	import { FORM_STEP, type FormStep, type PenlightColor, type SectionNumber } from '$lib/custom';
 	import { Button, Dropdown, DropdownItem, Label } from 'flowbite-svelte';
 	import { ChevronDownOutline } from 'flowbite-svelte-icons';
 	import { fade } from 'svelte/transition';
 
-	const sections = Array.from({ length: 16 }, (_, i) => i + 1);
-	const rows = ['v', 'w', 'x', 'y', 'z', 'other'];
-	// FIXME: do not render all rows for all sections
+	const sections = Object.keys(sectionPenlightColorMapping);
 
 	let activeStep: FormStep = FORM_STEP.SELECT_SEAT;
 
 	let selectedRow: string;
 	let selectedSection: SectionNumber;
+
+	$: availableRows = selectedSection
+		? Object.keys(sectionPenlightColorMapping[selectedSection])
+		: [];
 
 	let rowDropdownOpen = false;
 	let sectionDropdownOpen = false;
@@ -90,7 +92,7 @@
 					class="h-64 w-60 overflow-y-auto py-1"
 					bind:open={rowDropdownOpen}
 				>
-					{#each rows as row}
+					{#each availableRows as row}
 						<DropdownItem
 							class="flex items-center gap-2 text-base font-semibold"
 							on:click={handleRowDropdownClick}
