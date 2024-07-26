@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Britanic";
+    src: url('lib/assets/BRITANIC.TTF') format("truetype");
+}
+
+body {
+    /* background-image: url('lib/assets/penlight-bg.jpg'); */
+    font-family: "Britanic";
+    /* color: white !important; */
+    
+} 
