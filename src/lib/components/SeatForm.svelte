@@ -36,6 +36,14 @@
 	// Handlers
 	const handleNextBtnClick = () => {
 		if (activeStep === FORM_STEP.SELECT_SEAT) {
+			if (!selectedSection) {
+				alert('Please select a section');
+				return;
+			}
+			if (selectedSection <= 3 && !selectedRow) {
+				alert('Please select a row');
+				return;
+			}
 			activeStep = FORM_STEP.CONFIRMATION;
 		}
 	};
