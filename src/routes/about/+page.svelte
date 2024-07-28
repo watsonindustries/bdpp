@@ -1,6 +1,18 @@
-<section class="space-y-4 p-4 max-w-2xl mx-auto">
+<script lang="ts">
+	import { MetaTags } from 'svelte-meta-tags';
+</script>
+
+<title>BDPP | About</title>
+<meta name="description" content="Breaking Dimensions Penlight Project information page." />
+
+<MetaTags
+	title="BDPP | About"
+	description="Breaking Dimensions Penlight Project information page."
+/>
+
+<section class="mx-auto max-w-2xl space-y-4 p-4">
 	<h1
-		class="mb-4 bg-gradient-to-br from-primary-600 to-secondary-600 bg-clip-text text-4xl xl:text-6xl font-bold tracking-tight text-transparent"
+		class="mb-4 bg-gradient-to-br from-primary-600 to-secondary-600 bg-clip-text text-4xl font-bold tracking-tight text-transparent xl:text-6xl"
 	>
 		HoloENLight Breaks Dimensions!
 	</h1>
