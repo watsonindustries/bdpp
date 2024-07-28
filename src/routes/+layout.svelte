@@ -12,10 +12,10 @@
 		<!-- <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white px-2">Breaking Dimensions PP</span> -->
 	</NavBrand>
 	<NavHamburger />
-	<NavUl nonActiveClass="text-primary-900 font-semibold">
+	<NavUl nonActiveClass="text-primary-900 font-semibold xl:text-2xl">
 		<NavLi href="/">Home</NavLi>
 		<NavLi href="/about">About</NavLi>
-		<NavLi href="/contact">Contact</NavLi>
+		<!-- <NavLi href="/credits">Credits</NavLi> -->
 	</NavUl>
 </Navbar>
 
