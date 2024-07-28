@@ -6,8 +6,6 @@
 	import { ChevronDownOutline, EditSolid } from 'flowbite-svelte-icons';
 	import { fade } from 'svelte/transition';
 
-	import StageImage from '$lib/assets/stage_image.png?enhanced';
-
 	const sections = Object.keys(sectionPenlightColorMapping);
 
 	let activeStep: FormStep = FORM_STEP.SELECT_SEAT;
@@ -142,5 +140,3 @@
 		>
 	</section>
 {/if}
-
-<enhanced:img src={StageImage} alt="Penlight Stage Chart 2024" />

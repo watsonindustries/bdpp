@@ -4,12 +4,12 @@
 
 @font-face {
     font-family: "Britanic";
-    src: url('lib/assets/BRITANIC.TTF') format("truetype");
+    src: url('/fonts/BRITANIC.TTF') format("truetype"), local('Optima');
+    font-display: fallback;
 }
 
 body {
     /* background-image: url('lib/assets/penlight-bg.jpg'); */
-    font-family: "Britanic";
+    font-family: "Britanic", Optima, sans-serif;
     /* color: white !important; */
-    
-} 
+}
