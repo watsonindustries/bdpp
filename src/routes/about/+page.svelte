@@ -28,10 +28,6 @@
 	>
 		How can I participate?
 	</h2>
-	<p class="text-primary-900 xl:text-xl">
-		First, find your color! Read the section and row on your ticket, then use our website or the map
-		to find the correct color for your seats. Both days will use the same pattern.
-	</p>
 
 	<p class="text-primary-900 xl:text-xl">
 		During the concerts, the project will start with the Breaking Dimensions theme. Change your
@@ -41,7 +37,7 @@
 
 	<p class="text-primary-900 xl:text-xl">
 		To find your project color, read the section and row written on your ticket. Then use this
-		webapp or the map below to find the correct color! Both days will use the same pattern.
+		webapp or the map to find the correct color! Both days will use the same pattern.
 	</p>
 
 	<div class="text-primary-900 xl:text-xl">
@@ -59,4 +55,6 @@
 		This project can’t succeed without fans spreading the word! Please tell your friends going to
 		Breaking Dimensions about us! Thank you!
 	</p>
+
+	<p class="text-primary-900 xl:text-xl">#HoloENLight</p>
 </section>
