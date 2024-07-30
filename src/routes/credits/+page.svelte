@@ -38,5 +38,10 @@
 		<li>Skiddosaur</li>
 	</ul>
 
+	<h2 class="text-2xl text-primary-700 xl:text-3xl" id="graphic-design">Penlight Color Expert</h2>
+	<ul class="list-inside list-disc text-lg text-primary-900 xl:text-xl">
+		<li>UberHopper</li>
+	</ul>
+
 	<p class="text-lg text-primary-900">...and many other fans!</p>
 </section>
