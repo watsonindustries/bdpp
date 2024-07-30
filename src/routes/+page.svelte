@@ -12,7 +12,7 @@
 
 <svelte:head>
 	<title>BDPP | Home</title>
-	<meta name="description" content="Breaking Dimensions Penlight Project home." />	
+	<meta name="description" content="Breaking Dimensions Penlight Project home." />
 </svelte:head>
 
 <MetaTags
@@ -53,7 +53,7 @@
 	<br />
 	<div class="my-8 rounded border-2 border-primary-950/70"></div>
 	<br />
-	<p class="text-2xl">Map</p>
+	<p class="text-2xl font-bold tracking-tight text-primary-800">Map</p>
 
 	<enhanced:img src={StageImage} alt="Penlight Stage Chart 2024" class="mx-auto" />
 </div>
