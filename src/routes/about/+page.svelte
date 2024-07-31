@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Button } from 'flowbite-svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 </script>
 
@@ -57,4 +58,8 @@
 	</p>
 
 	<p class="text-primary-900 xl:text-xl">#HoloENLight</p>
+
+	<Button shadow color="dark" size="xl" href="https://x.com/HoloENPP" class="gap-2 text-2xl" pill
+		>Follow us on <span class="font-bold">𝕏</span></Button
+	>
 </section>

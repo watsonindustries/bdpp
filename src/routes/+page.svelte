@@ -5,8 +5,6 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import type { PageData } from './$types';
 
-	export const ssr = true;
-
 	export let data: PageData;
 </script>
 

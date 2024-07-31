@@ -28,7 +28,7 @@
 
 	<h2 class="text-2xl text-primary-700 xl:text-3xl" id="web-development">Web Development</h2>
 	<ul class="list-inside list-disc text-lg text-primary-900 xl:text-xl">
-		<li>danirukun</li>
+		<li>anonymous teamate</li>
 		<li>Moondog</li>
 		Special thanks to GoldElysium for logistics support.
 	</ul>
